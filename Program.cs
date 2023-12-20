@@ -1,31 +1,53 @@
 ﻿using ShootingDice;
 
-Player player1 = new Player();
+SmackTalkingPlayer player1 = new SmackTalkingPlayer();
 player1.Name = "Bob";
+player1.SmackTalking();
 
-Player player2 = new Player();
+OneHigherPlayer player2 = new OneHigherPlayer();
 player2.Name = "Sue";
 
 player2.Play(player1);
 
 Console.WriteLine("-------------------");
 
-Player player3 = new Player();
+HumanPlayer player3 = new HumanPlayer();
 player3.Name = "Wilma";
 
 player3.Play(player2);
 
 Console.WriteLine("-------------------");
 
-Player large = new LargeDicePlayer();
-large.Name = "Bigun Rollsalot";
+CreativeSmackTalkingPlayer player4 = new CreativeSmackTalkingPlayer();
+player4.Name = "Bigun";
 
-player1.Play(large);
+player1.Play(player4);
+
+Console.WriteLine("-------------------");
+
+SoreLoserPlayer player5 = new SoreLoserPlayer();
+player5.Name = "Alex";
+
+player2.Play(player5);
+
+Console.WriteLine("-------------------");
+
+UpperHalfPlayer player6 = new UpperHalfPlayer();
+player6.Name = "George";
+
+player3.Play(player6);
+
+Console.WriteLine("-------------------");
+
+SoreLoserUpperHalfPlayer player7 = new SoreLoserUpperHalfPlayer();
+player7.Name = "Monica";
+
+player4.Play(player7);
 
 Console.WriteLine("-------------------");
 
 List<Player> players = new List<Player>() {
-    player1, player2, player3, large
+    player1, player2, player3, player4, player5, player6, player7,
 };
 
 PlayMany(players);
